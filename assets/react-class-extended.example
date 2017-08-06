@@ -1,0 +1,20 @@
+// The ES6+ way
+class MyComponent extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      candy: 'nerds'
+    }
+  }
+}
+
+// The ES5 way
+var MyComponent = React.createClass({
+  getInitialState: function() {
+    return {
+      candy: 'nerds',
+    };
+  },
+
+});

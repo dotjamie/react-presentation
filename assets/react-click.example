@@ -1,0 +1,36 @@
+<div id='root'></div>
+
+class ClickExample extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+  render() {
+    return (
+      <div>
+      {this.state.count < 5 ?
+        <div>
+          <h2>
+            The button has been clicked {this.state.count} times
+          </h2>
+          <button type="button" onClick={this.handleClick}>Click Me</button>
+        </div> :
+          <h2>That's enough!</h2>
+        }
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <ClickExample />,
+  document.getElementById('root')
+);

@@ -1,0 +1,29 @@
+// The ES6+ way
+class MyComponent extends React.Component {
+  constructor(){
+    super(props);
+    this.state = {
+      place: 'world'
+    }
+  }
+  
+  render() {
+    return (
+      <div>Hello women of the {this.state.place}!</div>
+    )
+  }
+}
+
+// The ES5 way
+// React deprecated as of v15.5.0
+var MyComponent = React.createClass({
+  getInitialState: function() {
+    return {place: 'world'};
+  },
+
+  render: function() {
+    return (
+      <div>Hello women of the {this.state.place}!</div>
+    )
+  }
+});
